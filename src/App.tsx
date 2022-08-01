@@ -1,6 +1,6 @@
 //@ts-nocheck
 import React, { useEffect, useState, useRef } from "react";
-import * as serviceWorkerRegistration from "./serviceWorkerRegistration";
+import { register } from "./serviceWorkerRegistration";
 import logo from "./logo.svg";
 import "./App.css";
 
@@ -19,7 +19,7 @@ function App() {
   }, []);
   useEffect(() => {
     console.log("useEffect");
-    serviceWorkerRegistration.register();
+    register();
     window.addEventListener("beforeinstallprompt", (event) => {
       deferredInstall.current = event;
       console.log("beforeinstallprompt app", event);
@@ -51,7 +51,7 @@ function App() {
             ref={buttonRef}
             onClick={handleButtonClick}
           >
-            install app 8
+            install app 9
           </button>
         )}
       </header>
